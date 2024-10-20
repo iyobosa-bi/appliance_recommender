@@ -1,0 +1,136 @@
+/** External Styling Here**/
+
+body{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'PT Mono',sans-serif;
+    font-size: 14px;
+}
+
+.title{
+    font-weight:600;
+    font-size:9px;
+    font-style:normal;
+}
+
+.topmost{
+  
+    background:#6b1d44;
+}
+#response{
+    font-size:28px;
+    font-weight:700;
+    color:#f5891d;
+    width:100%;
+}
+
+#err{
+    color:white;
+    font-weight:700;
+  font-size: 18px;
+  transition:  600s ease;
+  transform:scale3d(1.5);
+  background-color:rgb(156, 3, 3);
+  border-radius:2px;
+  width:40%;
+  margin:10px 0px;
+  
+}
+input{
+    border:orange;
+    border-radius: 10px;
+}
+
+ input[placeholder] {
+        font-size :11px;
+        border:black
+
+        
+}
+
+.navbackground{
+    background-color:#313133 ;
+    
+}
+
+.logo{
+    font-size:12px;
+    font-weight: bolder;
+}
+
+.nav-btn {
+    background-color:#f5891d;
+    font-size: 12px;
+  }
+
+  .nav-btnn{
+    font-size: 12px;
+    border: 1px solid #f5891d;
+    border-radius:2px;
+  }
+
+  .nav-btnn a{
+    text-decoration:none;
+    color:white
+
+  }
+  .search-form {
+    width:40%;
+   
+    
+  }
+.search-input {
+    width: 100%; 
+    margin-right: 5px;
+    outline:none; 
+}
+.search-button {
+    color:white;
+    border:2px solid #f5891d;
+    border-radius: 2px;
+    font-size: 12px;
+    padding: 5px 10px; }
+
+    .hero-body{
+        background-color:#313133;
+    }
+
+.main{
+    background-color: #eee;
+}
+
+.footer{
+    
+    background-color: black;
+    font-size:11px;
+    
+}
+
+#appsection{
+    padding:100px;
+}
+
+hr{
+    width:15%;
+}
+
+marquee{
+   
+    background-color:black;
+    color:white;
+    padding:20px;
+    width:100%;
+    border:2px solid #f5891d;
+    border-radius:5px;
+    
+    
+}
+
+.links a{
+    color:white;
+}
+
+.togglebutton{
+    color:white;
+}

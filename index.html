@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naija Express Generator Recommender Page-Blessing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+
+    <style>
+
+        .top{
+            
+            padding: 0px;
+           
+        }
+    </style>
+
+</head>
+<body>
+    
+  <!-- <div class="row topmost"><div class="col"></div><marquee direction="right"><p class="text-center title">Naija<span style="color: #08d126">Express</span> Generator Recommendation System</p></marquee></div><div> -->
+    <nav class="navbar navbar-expand-lg navbackground text-white px-5 pt-4">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white logo">NaijaExpress</a>
+          <button class="navbar-toggler togglebutton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="True" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse ms-5 text-center justify-content-around" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 links">
+              <li class="nav-item ">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Our Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <button class="btn nav-btn text-white me-3 px-4 py-2">
+                  Get Started
+                </button>
+              
+            </ul>
+            <form class="d-flex search-form">
+              <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn search-button" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        
+      </nav>
+      
+      <div class="container-fluid mt-0">
+      <div class="row hero-body justify-content-center align-items-center py-5">
+        <div class="col-md-5 text-light hero-text">
+          <h1 style="font-family:Poppins,arial,sans-serif;line-height:1.4;">Power Your Home with Confidence..</h1>
+          <p class="py-4">
+            At NaijaExpress, we understand the frustration of buying a generator that doesn’t meet your needs.
+            We are here to help you choose the perfect generator for your home!
+          </p>
+          <button class="btn nav-btn text-white px-4 py-2">Make Purchase</button>
+          <button class="btn btn-outline nav-btnn text-white px-4 py-2 mt-2 mt-md-2"><a href ="#appsection">Recommend a Generator</a></button>
+        </div>
+        <div class="col-md-4 mt-5 mt-md-1">
+          <img src="gen1.png" class="img-fluid"/>
+        </div>
+      </div>
+      </div>
+    
+    <div class="main">
+    <div class="container p-5" id="appsection">
+        <div class="row">
+
+                <div class="col-md-12 text-center text-md-start ">
+                <h6 style="font-family: Poppins,sans-serif;"><b>Determine the suitable generator capacity for your apartment</b></h6>
+                <p class="pt-3 pt-md-2">Add as many appliances as possible.</p>
+                <hr class="text-center text-md-start ">
+                </div>
+                <div class="col-md-12  mt-5 recommend text-center text-md-start ">
+                    <button class="btn s mt-2 nav-btnn" onclick="getRecommendation()">Get Expert Recommendation</button>
+                    <p id = 'err' class="text-center mt-5"></p>
+                </div>
+               
+                <div class="col-md-12 d-md-flex justify-content-between align-items-center mt-3 d-block ">
+
+                    <p class="text-center text-md-start" style="width: 100%;">Total Consumption;<span id = 'response'></span>kw</p>
+                    <marquee class="text-center text-md-start"  direction="left"><p  id="recommend"></p></marquee>
+                </div>
+
+                <div class="col-md-12 mt-5 next">
+
+                   
+                    <div class="table-responsive">
+                    <table class="table table-hover table-dark align-middle text-center top table-bordered"  id="main" >
+
+                        <thead class="top">
+                            <tr >
+                                <th>S/N</th>
+                                <th>Appliance</th>
+                                <th>Quantity</th>
+                                <th>Unit Consumption(KW)</th>
+                                <th>Total Consumption </th>
+                                <th>Remark</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mainsection">
+                            <tr id ='firstrow'>
+                                <td  id="firstcolumn">1</td>
+                                <td><input type="text" id = 'applianceName' name="applianceName" class="form-control text-center" placeholder="Enter Appliance name" onchange="totalConsumption()"></td>
+                                <td><input type="text" id = 'quan1' name ='quantity' class="form-control text-center" placeholder="Enter appliance quantity"  onchange="totalConsumption()"></td>
+                                <td><input type="text" id = 'unitConsume1' name ='unitconsumption' class="form-control text-center" placeholder="Enter Unit"    onchange="totalConsumption()"></td>
+                                <td class="text-white"  id = 'totConsume1'  ></td>
+                                <td id = 'remark1'></td>
+                            </tr>
+                            
+
+                        <tbody>
+
+
+
+
+                    </table>
+                    </div>  
+
+                    <div class="col text-center text-md-start">
+                    <button class="btn nav-btnn mt-5 text-center text-md-start" onclick="addMoreRows()"><i class="fa-solid fa-plus"></i> Add Items</button>
+                    <!-- <button class="btn btn-primary" onclick="removeRows()"><i class="fa-solid fa-minus"></i></button> to remove a row -->
+
+
+                    <button class="btn  nav-btn mt-5 text-center text-md-start" onclick="getRecommendation()">Get Recommendation</button>
+                </div>
+                </div>
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<div class="container-fluid footer">
+    <div class="row  d-flex align-items-center text-white footer">
+        <div class="col-md-12 mt-3">
+        <p class="text-white text-center">Copyright &copy; 2024 Blessing </p>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+   <script src="script.js">
+
+    </script>
+
+</body>
+</html>
